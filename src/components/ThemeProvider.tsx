@@ -18,7 +18,7 @@ type ThemeProviderState = {
 };
 
 const initialState: ThemeProviderState = {
-  theme: 'light',
+  theme: 'light', // This will be effectively overridden by defaultTheme prop in useState
   setTheme: () => null,
 };
 
@@ -27,25 +27,64 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export function ThemeProvider({
   children,
   defaultTheme = 'light',
-  storageKey = 'mahendra-pharmacy-ui-theme', // Updated storage key
+  storageKey = 'mahendra-pharmacy-ui-theme',
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== 'undefined') {
-      return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
-    }
-    return defaultTheme;
-  });
+  // Initialize with defaultTheme to ensure server and initial client render state match
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const [mounted, setMounted] = useState(false);
 
+  // Effect to read from localStorage and apply stored theme AFTER mount
   useEffect(() => {
+    setMounted(true); // Mark as mounted on client
+    try {
+      const storedTheme = localStorage.getItem(storageKey) as Theme | null;
+      if (storedTheme && (storedTheme === 'light' || storedTheme === 'dark')) {
+        if (storedTheme !== theme) { // Only update if different from initial (defaultTheme)
+          setTheme(storedTheme);
+        }
+      } else {
+        // If no valid theme in localStorage, or it matches default,
+        // ensure defaultTheme is visually applied and stored.
+        // This handles first-ever load or cleared localStorage.
+        const root = window.document.documentElement;
+        root.classList.remove('light', 'dark');
+        root.classList.add(defaultTheme);
+        localStorage.setItem(storageKey, defaultTheme);
+      }
+    } catch (e) {
+      console.warn(`Failed to access localStorage for theme: ${e}`);
+      // Fallback to applying defaultTheme visually if localStorage fails
+      const root = window.document.documentElement;
+      root.classList.remove('light', 'dark');
+      root.classList.add(defaultTheme);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [storageKey, defaultTheme]); // Removed 'theme' from deps to avoid loop on initial set
+
+  // Effect to update HTML class and localStorage when theme state changes (by user or initial load)
+  useEffect(() => {
+    if (!mounted) {
+      // On server or before initial client mount, if theme is already default, do nothing extra.
+      // The body class will be set by CSS vars derived from initial HTML class.
+      // If we want to set the class on `html` during SSR, it's more complex.
+      // For now, `suppressHydrationWarning` and matching initial state is key.
+      return;
+    }
+
     const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
     root.classList.add(theme);
-    localStorage.setItem(storageKey, theme);
-  }, [theme, storageKey]);
+    try {
+      localStorage.setItem(storageKey, theme);
+    } catch (e) {
+      console.warn(`Failed to set theme in localStorage: ${e}`);
+    }
+  }, [theme, mounted, storageKey]);
 
   const value = {
     theme,
     setTheme: (newTheme: Theme) => {
+      if (!mounted) return; // Prevent setting theme before client is fully mounted and initialized
       setTheme(newTheme);
     },
   };
