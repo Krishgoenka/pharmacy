@@ -57,14 +57,16 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
                 <div className="aspect-video rounded-lg overflow-hidden border">
-                <Image
-                    src="https://placehold.co/600x400.png"
-                    alt={`${pharmacyDetails.name} Location Map`}
-                    width={600}
-                    height={400}
-                    className="w-full h-full object-cover"
-                    data-ai-hint="map location kolkata"
-                />
+                <iframe
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(pharmacyDetails.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${pharmacyDetails.name} Location Map`}
+                  ></iframe>
                 </div>
             </CardContent>
           </Card>
