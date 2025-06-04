@@ -12,13 +12,13 @@ export default function HomePage() {
     <div className="flex flex-col min-h-dvh animate-fade-in">
       {/* Hero Section */}
       <section className="w-full">
-        <div className="relative w-full h-[50vh] md:h-[60vh] bg-muted"> {/* Added bg-muted as a fallback while image loads */}
+        <div className="relative w-full h-[50vh] md:h-[60vh] bg-muted">
           <Image
-            src="https://placehold.co/1600x900.png" // Reminder: Replace this with your image path, e.g., /hero-banner.jpg
+            src="/hero-banner.jpg" // IMPORTANT: Download your image and place it in /public/hero-banner.jpg
             alt={`${pharmacyDetails.name} Banner`}
-            layout="fill"
-            objectFit="cover"
-            priority // Good to add for LCP images
+            fill={true}
+            style={{ objectFit: 'cover' }}
+            priority
             data-ai-hint="pharmacy interior medicines"
           />
         </div>
