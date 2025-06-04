@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { pharmacyDetails } from '@/lib/data';
 import { ContactForm } from '@/components/ContactForm';
@@ -58,7 +59,7 @@ export default function ContactPage() {
                 <div className="aspect-video rounded-lg overflow-hidden border">
                 <Image
                     src="https://placehold.co/600x400.png"
-                    alt="Mahindra Pharmacy Location Map"
+                    alt={`${pharmacyDetails.name} Location Map`}
                     width={600}
                     height={400}
                     className="w-full h-full object-cover"

@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 import { Pill, Truck, Microscope, Stethoscope, User, Star } from 'lucide-react';
 
@@ -91,12 +92,12 @@ export const reviewsData: Review[] = [
     id: '3',
     name: 'Rohan M.',
     rating: 4.5,
-    feedback: 'Found Mahindra Pharmacy very reliable for medical tests and genuine medicines. Highly recommended!',
+    feedback: 'Found Mahendra Pharmacy very reliable for medical tests and genuine medicines. Highly recommended!',
   },
 ];
 
 export const pharmacyDetails = {
-  name: "Mahindra Pharmacy",
+  name: "Mahendra Pharmacy",
   phoneNumbers: ["7899044371", "9808930090"],
   email: "akash.agarwal5@yahoo.com",
   operatingHours: "9:00 AM – 10:00 PM (All days, break: 2:00 PM - 2:00 PM implied continuity)", // Clarified based on prompt
@@ -105,8 +106,8 @@ export const pharmacyDetails = {
   tagline: "Your Trusted Pharmacy with Medicine, Doctors, and Testing Services",
   social: {
     whatsapp: "https://wa.me/917899044371", // Assuming one number for WhatsApp
-    facebook: "https://facebook.com/mahindrapharmacy",
-    instagram: "https://instagram.com/mahindrapharmacy",
+    facebook: "https://facebook.com/mahendrapharmacy", // Updated assuming generic link
+    instagram: "https://instagram.com/mahendrapharmacy", // Updated assuming generic link
   }
 };
 

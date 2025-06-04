@@ -3,11 +3,13 @@
 
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { pharmacyDetails } from '@/lib/data';
 
 export default function PrivacyPolicyPage() {
   const [lastUpdatedDate, setLastUpdatedDate] = useState<string | null>(null);
 
   useEffect(() => {
+    // This ensures date is generated only on client-side after hydration
     setLastUpdatedDate(new Date().toLocaleDateString());
   }, []);
 
@@ -21,7 +23,7 @@ export default function PrivacyPolicyPage() {
           <p>Last updated: {lastUpdatedDate || 'Loading...'}</p>
           
           <h2 className="font-headline text-2xl mt-6">Introduction</h2>
-          <p>Mahindra Pharmacy ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+          <p>{pharmacyDetails.name} ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
 
           <h2 className="font-headline text-2xl mt-6">Information We Collect</h2>
           <p>We may collect personal information such as your name, email address, phone number, shipping address, prescription details, and payment information when you voluntarily provide it to us.</p>
@@ -47,7 +49,7 @@ export default function PrivacyPolicyPage() {
           <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
 
           <h2 className="font-headline text-2xl mt-6">Contact Us</h2>
-          <p>If you have any questions about this Privacy Policy, please contact us at [Your Pharmacy Email] or [Your Pharmacy Phone Number].</p>
+          <p>If you have any questions about this Privacy Policy, please contact us at {pharmacyDetails.email} or {pharmacyDetails.phoneNumbers.join(' / ')}.</p>
         </CardContent>
       </Card>
     </div>

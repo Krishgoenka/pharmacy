@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { pharmacyDetails, services } from '@/lib/data';
@@ -51,7 +52,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-6">
              <Image
               src="https://placehold.co/600x400.png"
-              alt="Mahindra Pharmacy Interior"
+              alt={`${pharmacyDetails.name} Interior`}
               width={600}
               height={400}
               className="rounded-lg object-cover shadow-md w-full h-64"
@@ -59,7 +60,7 @@ export default function AboutPage() {
             />
             <Image
               src="https://placehold.co/600x400.png"
-              alt="Mahindra Pharmacy Exterior"
+              alt={`${pharmacyDetails.name} Exterior`}
               width={600}
               height={400}
               className="rounded-lg object-cover shadow-md w-full h-64"

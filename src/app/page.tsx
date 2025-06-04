@@ -1,9 +1,10 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { pharmacyDetails, services, dealItems, reviewsData } from '@/lib/data';
-import { Phone, Mail, MapPin, Clock, MessageSquare, CalendarDays, ShoppingCart, Pill, Truck, Microscope, Stethoscope, Star } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageSquare, CalendarDays, ShoppingCart, Pill, Truck, Microscope, Stethoscope, Star, Tag } from 'lucide-react';
 import { ConsultationBookingSection } from '@/components/sections/ConsultationBookingSection';
 
 export default function HomePage() {
@@ -13,7 +14,7 @@ export default function HomePage() {
       <section className="relative h-[60vh] md:h-[70vh] w-full">
         <Image
           src="https://placehold.co/1600x900.png"
-          alt="Mahindra Pharmacy Banner"
+          alt={`${pharmacyDetails.name} Banner`}
           layout="fill"
           objectFit="cover"
           className="opacity-50"
@@ -71,9 +72,6 @@ export default function HomePage() {
                   </a>
                 </Button>
               </CardContent>
-               <CardFooter className="pt-4">
-                 <Button variant="secondary" className="w-full" asChild><Link href="#best-deals">Best Deals</Link></Button>
-               </CardFooter>
             </Card>
           </div>
         </div>
@@ -96,6 +94,17 @@ export default function HomePage() {
            <div className="text-center mt-8 animate-slide-in-up [animation-delay:0.4s]">
              <Button asChild variant="default"><Link href="/services">View All Services</Link></Button>
            </div>
+        </div>
+      </section>
+
+      {/* Best Deals Call to Action */}
+      <section className="py-8 bg-background">
+        <div className="container mx-auto px-4 md:px-6 text-center animate-slide-in-up [animation-delay:0.2s]">
+          <Button size="lg" variant="secondary" asChild>
+            <Link href="#best-deals" className="flex items-center gap-2">
+              <Tag className="h-5 w-5"/> View Our Best Deals
+            </Link>
+          </Button>
         </div>
       </section>
 

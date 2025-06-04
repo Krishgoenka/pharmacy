@@ -8,7 +8,8 @@ import type { DateDisabledMatcher } from 'react-day-picker';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { useToast } from "@/hooks/use-toast"
-import { CalendarDays, Clock } from 'lucide-react'
+import { CalendarDays, PhoneCall } from 'lucide-react'
+import { pharmacyDetails } from '@/lib/data';
 
 const availableTimeSlots = [
   "09:00 AM - 09:30 AM",
@@ -29,12 +30,13 @@ export function ConsultationBookingSection() {
 
   useEffect(() => {
     // Set initial selected date to today
-    setSelectedDate(new Date());
+    const today = new Date();
+    setSelectedDate(today);
 
     // Disable dates before today
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); // Ensure comparison is based on the start of the day
-    setDisabledDays({ before: today });
+    const startOfToday = new Date();
+    startOfToday.setHours(0, 0, 0, 0); // Ensure comparison is based on the start of the day
+    setDisabledDays({ before: startOfToday });
   }, []);
 
   const handleBooking = () => {
@@ -46,11 +48,14 @@ export function ConsultationBookingSection() {
       })
       return;
     }
-    // Mock booking
-    toast({
-      title: "Consultation Booked (Mock)",
-      description: `Your appointment is scheduled for ${selectedDate.toLocaleDateString()} at ${selectedTime}.`,
-    })
+    // Redirect to call
+    if (typeof window !== 'undefined') {
+        toast({
+            title: "Redirecting to Call",
+            description: `Preparing to call for your appointment on ${selectedDate.toLocaleDateString()} at ${selectedTime}.`,
+        });
+        window.location.href = `tel:${pharmacyDetails.phoneNumbers[0]}`;
+    }
   }
 
   return (
@@ -63,7 +68,7 @@ export function ConsultationBookingSection() {
               <CalendarDays className="text-primary" /> Schedule Your Appointment
             </CardTitle>
             <CardDescription>
-              Choose a convenient date and time to consult with one of our specialists.
+              Choose a convenient date and time, then call us to confirm your consultation.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -96,14 +101,14 @@ export function ConsultationBookingSection() {
                   </Select>
                 </div>
                  <Button onClick={handleBooking} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Book Appointment
+                  <PhoneCall className="mr-2 h-4 w-4" /> Call to Book
                 </Button>
               </div>
             </div>
           </CardContent>
           <CardFooter>
             <p className="text-xs text-muted-foreground">
-              This is a mock booking system. For actual appointments, please call us or visit the pharmacy.
+              After selecting date and time, click the button above to call us and finalize your appointment.
             </p>
           </CardFooter>
         </Card>

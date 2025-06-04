@@ -5,11 +5,12 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { pharmacyDetails } from '@/lib/data';
 
 
 export const metadata: Metadata = {
-  title: 'Mahindra Meds',
-  description: 'Your Trusted Pharmacy with Medicine, Doctors, and Testing Services',
+  title: `${pharmacyDetails.name} Meds`,
+  description: `Your Trusted Pharmacy: ${pharmacyDetails.name} - Medicine, Doctors, and Testing Services`,
 };
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
       <body className="font-body antialiased flex flex-col min-h-screen bg-background text-foreground">
         <ThemeProvider
           defaultTheme="light"
-          storageKey="mahindra-pharmacy-theme"
+          storageKey="mahendra-pharmacy-theme"
         >
           <Header />
           <main className="flex-grow">

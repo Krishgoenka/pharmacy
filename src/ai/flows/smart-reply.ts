@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -33,7 +34,7 @@ const smartReplyPrompt = ai.definePrompt({
   name: 'smartReplyPrompt',
   input: {schema: SmartReplyInputSchema},
   output: {schema: SmartReplyOutputSchema},
-  prompt: `You are an AI assistant that suggests quick replies for customer inquiries related to a pharmacy called Mahindra Pharmacy.
+  prompt: `You are an AI assistant that suggests quick replies for customer inquiries related to a pharmacy called Mahendra Pharmacy.
 
   Generate a maximum of 3 suggested replies based on the following customer inquiry:
   {{customerInquiry}}

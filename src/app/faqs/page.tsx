@@ -1,3 +1,4 @@
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { pharmacyDetails } from "@/lib/data";
@@ -5,7 +6,7 @@ import { pharmacyDetails } from "@/lib/data";
 const faqData = [
   {
     question: "What are your operating hours?",
-    answer: `Mahindra Pharmacy is open from ${pharmacyDetails.fullOperatingHours}.`
+    answer: `${pharmacyDetails.name} is open from ${pharmacyDetails.fullOperatingHours}.`
   },
   {
     question: "Do you offer home delivery?",
