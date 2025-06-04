@@ -16,9 +16,10 @@ export default function HomePage() {
           <Image
             src="/hero-banner.jpg" 
             alt={`${pharmacyDetails.name} Banner`}
-            fill={true}
+            fill
             style={{ objectFit: 'cover' }}
             priority
+            sizes="100vw"
             data-ai-hint="pharmacy interior medicines"
           />
         </div>
