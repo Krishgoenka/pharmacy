@@ -11,23 +11,25 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-dvh animate-fade-in">
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] w-full">
-        <Image
-          src="https://placehold.co/1600x900.png"
-          alt={`${pharmacyDetails.name} Banner`}
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-          data-ai-hint="pharmacy interior medicines"
-        />
-        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-4">
-          <h1 className="font-headline text-4xl md:text-6xl font-bold text-white animate-slide-in-up [animation-delay:0.2s]">
+      <section className="w-full">
+        <div className="relative w-full h-[50vh] md:h-[60vh] bg-muted"> {/* Added bg-muted as a fallback while image loads */}
+          <Image
+            src="https://placehold.co/1600x900.png" // Reminder: Replace this with your image path, e.g., /hero-banner.jpg
+            alt={`${pharmacyDetails.name} Banner`}
+            layout="fill"
+            objectFit="cover"
+            priority // Good to add for LCP images
+            data-ai-hint="pharmacy interior medicines"
+          />
+        </div>
+        <div className="container mx-auto px-4 md:px-6 py-8 md:py-12 text-center">
+          <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary animate-slide-in-up [animation-delay:0.2s]">
             {pharmacyDetails.name}
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl animate-slide-in-up [animation-delay:0.4s]">
+          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-in-up [animation-delay:0.4s]">
             {pharmacyDetails.tagline}
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-slide-in-up [animation-delay:0.6s]">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-up [animation-delay:0.6s]">
             <Button size="lg" variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
               <a href={`tel:${pharmacyDetails.phoneNumbers[0]}`}>Call Now</a>
             </Button>
