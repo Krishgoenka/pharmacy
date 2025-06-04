@@ -1,8 +1,10 @@
+
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
+import type { DateDisabledMatcher } from 'react-day-picker';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { useToast } from "@/hooks/use-toast"
@@ -20,9 +22,20 @@ const availableTimeSlots = [
 ]
 
 export function ConsultationBookingSection() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date())
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>()
   const [selectedTime, setSelectedTime] = useState<string | undefined>()
+  const [disabledDays, setDisabledDays] = useState<DateDisabledMatcher | DateDisabledMatcher[] | undefined>(undefined);
   const { toast } = useToast()
+
+  useEffect(() => {
+    // Set initial selected date to today
+    setSelectedDate(new Date());
+
+    // Disable dates before today
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Ensure comparison is based on the start of the day
+    setDisabledDays({ before: today });
+  }, []);
 
   const handleBooking = () => {
     if (!selectedDate || !selectedTime) {
@@ -61,7 +74,7 @@ export function ConsultationBookingSection() {
                   selected={selectedDate}
                   onSelect={setSelectedDate}
                   className="rounded-md border"
-                  disabled={(date) => date < new Date(new Date().setDate(new Date().getDate() -1)) } // Disable past dates
+                  disabled={disabledDays}
                 />
               </div>
               <div className="space-y-4 flex-1 w-full">

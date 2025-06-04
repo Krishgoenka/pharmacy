@@ -1,6 +1,16 @@
+
+'use client';
+
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function TermsOfServicePage() {
+  const [lastUpdatedDate, setLastUpdatedDate] = useState<string | null>(null);
+
+  useEffect(() => {
+    setLastUpdatedDate(new Date().toLocaleDateString());
+  }, []);
+
   return (
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-16 animate-fade-in">
       <Card className="shadow-lg">
@@ -8,7 +18,7 @@ export default function TermsOfServicePage() {
           <CardTitle className="font-headline text-3xl md:text-4xl text-primary">Terms of Service</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 text-foreground leading-relaxed">
-          <p>Last updated: {new Date().toLocaleDateString()}</p>
+          <p>Last updated: {lastUpdatedDate || 'Loading...'}</p>
 
           <h2 className="font-headline text-2xl mt-6">1. Agreement to Terms</h2>
           <p>By accessing or using the Mahindra Pharmacy website and services, you agree to be bound by these Terms of Service. If you disagree with any part of the terms, then you may not access the service.</p>

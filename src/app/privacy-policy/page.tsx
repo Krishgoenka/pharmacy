@@ -1,6 +1,16 @@
+
+'use client';
+
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function PrivacyPolicyPage() {
+  const [lastUpdatedDate, setLastUpdatedDate] = useState<string | null>(null);
+
+  useEffect(() => {
+    setLastUpdatedDate(new Date().toLocaleDateString());
+  }, []);
+
   return (
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-16 animate-fade-in">
       <Card className="shadow-lg">
@@ -8,7 +18,7 @@ export default function PrivacyPolicyPage() {
           <CardTitle className="font-headline text-3xl md:text-4xl text-primary">Privacy Policy</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 text-foreground leading-relaxed">
-          <p>Last updated: {new Date().toLocaleDateString()}</p>
+          <p>Last updated: {lastUpdatedDate || 'Loading...'}</p>
           
           <h2 className="font-headline text-2xl mt-6">Introduction</h2>
           <p>Mahindra Pharmacy ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
