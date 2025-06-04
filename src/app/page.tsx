@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="w-full">
         <div className="relative w-full h-[50vh] md:h-[60vh] bg-muted">
           <Image
-            src="/hero-banner.jpg" // IMPORTANT: Download your image and place it in /public/hero-banner.jpg
+            src="/hero-banner.jpg" 
             alt={`${pharmacyDetails.name} Banner`}
             fill={true}
             style={{ objectFit: 'cover' }}
