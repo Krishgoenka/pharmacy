@@ -31,25 +31,11 @@ export interface ServiceInfo {
 
 export const services: ServiceInfo[] = [
   {
-    id: 'chemists',
-    name: 'Chemists',
-    description: 'Prescription and over-the-counter medicines.',
-    Icon: Pill,
-    details: 'Our pharmacy stocks a wide range of authentic medicines. Our qualified pharmacists are available to help you with your prescriptions and health queries.'
-  },
-  {
-    id: 'home-delivery',
-    name: 'Home Delivery',
-    description: 'Order medicines online for doorstep delivery.',
-    Icon: Truck,
-    details: 'Conveniently order your medicines and healthcare products from home. We ensure prompt and safe delivery to your doorstep.'
-  },
-  {
-    id: 'medicines',
-    name: 'Medicines',
-    description: 'Antioxidants, Vitamins, Antibiotics, and more.',
-    Icon: Pill, // Using Pill icon again as it's general for medicines
-    details: 'We provide a comprehensive range of medications including specialized drugs, general healthcare products, vitamins, supplements, and personal care items.'
+    id: 'doctors',
+    name: 'Doctors',
+    description: 'Consult with specialists at the pharmacy.',
+    Icon: Stethoscope,
+    details: 'Our in-house doctors specialize in General Medicine, Pediatrics, and Dermatology. Book an appointment for expert medical consultation.'
   },
   {
     id: 'medical-tests',
@@ -59,11 +45,25 @@ export const services: ServiceInfo[] = [
     details: 'Affordable and reliable diagnostic testing services. We offer a variety of tests including blood tests, urine analysis, and more, with quick and accurate results.'
   },
   {
-    id: 'doctors',
-    name: 'Doctors',
-    description: 'Consult with specialists at the pharmacy.',
-    Icon: Stethoscope,
-    details: 'Our in-house doctors specialize in General Medicine, Pediatrics, and Dermatology. Book an appointment for expert medical consultation.'
+    id: 'home-delivery',
+    name: 'Home Delivery',
+    description: 'Order medicines online for doorstep delivery.',
+    Icon: Truck,
+    details: 'Conveniently order your medicines and healthcare products from home. We ensure prompt and safe delivery to your doorstep.'
+  },
+  {
+    id: 'chemists',
+    name: 'Chemists',
+    description: 'Prescription and over-the-counter medicines.',
+    Icon: Pill,
+    details: 'Our pharmacy stocks a wide range of authentic medicines. Our qualified pharmacists are available to help you with your prescriptions and health queries.'
+  },
+  {
+    id: 'medicines',
+    name: 'Medicines',
+    description: 'Antioxidants, Vitamins, Antibiotics, and more.',
+    Icon: Pill, // Using Pill icon again as it's general for medicines
+    details: 'We provide a comprehensive range of medications including specialized drugs, general healthcare products, vitamins, supplements, and personal care items.'
   },
 ];
 
@@ -112,7 +112,8 @@ export const pharmacyDetails = {
 };
 
 export const dealItems = [
-    { id: 1, name: 'Immunity Booster Pack', discount: '15% OFF', description: 'Vitamins C, D, and Zinc complex.', image: 'https://placehold.co/300x200.png', dataAiHint: 'vitamins supplements' },
-    { id: 2, name: 'Senior Citizen Health Checkup', discount: '20% OFF', description: 'Comprehensive health screening.', image: 'https://placehold.co/300x200.png', dataAiHint: 'health checkup' },
-    { id: 3, name: 'Diabetes Care Kit', discount: '10% OFF', description: 'Glucometer, strips, and lancets.', image: 'https://placehold.co/300x200.png', dataAiHint: 'diabetes care' },
+    { id: 1, name: 'All Medicines', discount: 'Flat 20% OFF', description: 'Get a flat 20% discount on our wide range of medicines.', image: 'https://placehold.co/300x200.png', dataAiHint: 'medicines pharmacy' },
+    { id: 2, name: 'Senior Citizen Health Checkup', discount: 'Up to 25% OFF', description: 'Dedicated health packages for our senior citizens at great prices.', image: 'https://placehold.co/300x200.png', dataAiHint: 'senior health' },
+    { id: 3, name: 'Diagnostic Test Packages', discount: 'Up to 30% OFF', description: 'Avail special discounts on various diagnostic tests and packages.', image: 'https://placehold.co/300x200.png', dataAiHint: 'lab tests' },
 ];
+
