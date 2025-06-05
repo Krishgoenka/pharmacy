@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 240 100% 99%; /* Off-white (PRD: #F8F8FF) */
-    --foreground: 220 20% 25%; /* Dark blue-gray for text */
+    --background: 195 100% 98%; /* Very light cyan tint */
+    --foreground: 220 40% 15%; /* Dark blue-gray for text */
 
-    --card: 55 100% 97%; /* Very pale yellow for cards */
-    --card-foreground: 220 20% 25%;
+    --card: 210 100% 97%; /* Very light blue for cards */
+    --card-foreground: 220 40% 15%; /* Dark blue-gray for card text */
 
-    --popover: 55 100% 97%; /* Very pale yellow for popovers */
-    --popover-foreground: 220 20% 25%;
+    --popover: 210 100% 97%; /* Very light blue for popovers */
+    --popover-foreground: 220 40% 15%; /* Dark blue-gray for popover text */
 
-    --primary: 207 44% 90%; /* Light Blue (PRD: #ADD8E6) */
-    --primary-foreground: 207 40% 25%; /* Darker blue for contrast */
+    --primary: 207 70% 65%; /* Light Blue - made a bit more saturated */
+    --primary-foreground: 210 100% 10%; /* Very dark blue for contrast on primary */
 
-    --secondary: 190 50% 95%; /* Very light cyan for secondary elements */
-    --secondary-foreground: 190 30% 25%; /* Darker cyan for text */
+    --secondary: 50 100% 90%; /* Light pleasant yellow */
+    --secondary-foreground: 50 60% 25%; /* Darker brownish-yellow for text on secondary */
 
-    --muted: 220 25% 94%; /* Lighter muted gray */
-    --muted-foreground: 220 15% 50%; /* Softer gray for muted text */
+    --muted: 220 30% 96%; /* Light gray for muted backgrounds */
+    --muted-foreground: 220 20% 45%; /* Darker gray for muted text */
 
-    --accent: 120 73% 75%; /* Gentle Green (PRD: #90EE90) */
-    --accent-foreground: 120 60% 20%; /* Dark green for contrast */
+    --accent: 180 65% 60%; /* Clear light cyan for accent */
+    --accent-foreground: 180 100% 10%; /* Very dark cyan for text on accent */
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 25% 92%; /* Light border */
-    --input: 220 25% 92%; /* Light input */
-    --ring: 207 44% 80%; /* Primary color for ring */
+    --border: 210 25% 90%; /* Light blueish-gray border */
+    --input: 210 25% 94%; /* Light input background */
+    --ring: 207 70% 55%; /* Visible primary color for ring */
 
     --radius: 0.5rem;
 
