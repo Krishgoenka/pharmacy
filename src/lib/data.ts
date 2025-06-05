@@ -85,14 +85,26 @@ export const reviewsData: Review[] = [
   {
     id: '2',
     name: 'Priya S.',
-    rating: 4,
+    rating: 4, // Kept as 4 to show variety, can be changed if all should be 5
     feedback: 'Good pharmacy with quick home delivery. The doctors are also very helpful.',
   },
   {
     id: '3',
     name: 'Rohan M.',
-    rating: 4.5,
+    rating: 4.5, // Kept as 4.5, can be changed
     feedback: 'Found Mahendar Pharmacy very reliable for medical tests and genuine medicines. Highly recommended!',
+  },
+  {
+    id: '4',
+    name: 'Sunita K.',
+    rating: 5,
+    feedback: 'Very professional and friendly staff. They always go the extra mile to help. Great pharmacy!',
+  },
+  {
+    id: '5',
+    name: 'Vikram B.',
+    rating: 5,
+    feedback: 'My go-to pharmacy in Kolkata. Fast service, and I trust their advice completely.',
   },
 ];
 
