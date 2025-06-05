@@ -51,20 +51,18 @@ export default function AboutPage() {
           </Card>
           <div className="grid grid-cols-1 gap-6">
              <Image
-              src="https://placehold.co/600x400.png"
+              src="/about1.png"
               alt={`${pharmacyDetails.name} Interior`}
               width={600}
               height={400}
               className="rounded-lg object-cover shadow-md w-full h-64"
-              data-ai-hint="pharmacy interior shelves"
             />
             <Image
-              src="https://placehold.co/600x400.png"
+              src="/about2.png"
               alt={`${pharmacyDetails.name} Exterior`}
               width={600}
               height={400}
               className="rounded-lg object-cover shadow-md w-full h-64"
-              data-ai-hint="pharmacy exterior building"
             />
           </div>
         </div>
