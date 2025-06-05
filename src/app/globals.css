@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 220 25% 97%; /* Light cool off-white */
-    --foreground: 220 25% 15%; /* Dark gray for text */
+    --background: 240 100% 99%; /* Off-white (PRD: #F8F8FF) */
+    --foreground: 220 20% 25%; /* Dark blue-gray for text */
 
-    --card: 0 0% 100%; /* Pure white */
-    --card-foreground: 220 25% 15%;
+    --card: 55 100% 97%; /* Very pale yellow for cards */
+    --card-foreground: 220 20% 25%;
 
-    --popover: 0 0% 100%; /* Pure white */
-    --popover-foreground: 220 25% 15%;
+    --popover: 55 100% 97%; /* Very pale yellow for popovers */
+    --popover-foreground: 220 20% 25%;
 
-    --primary: 200 60% 70%; /* Adjusted Light Blue */
-    --primary-foreground: 200 40% 15%; /* Darker blue for contrast */
+    --primary: 207 44% 90%; /* Light Blue (PRD: #ADD8E6) */
+    --primary-foreground: 207 40% 25%; /* Darker blue for contrast */
 
-    --secondary: 220 20% 94%; /* Cooler light gray */
-    --secondary-foreground: 220 25% 15%;
+    --secondary: 190 50% 95%; /* Very light cyan for secondary elements */
+    --secondary-foreground: 190 30% 25%; /* Darker cyan for text */
 
-    --muted: 220 20% 90%; /* Slightly darker muted gray */
-    --muted-foreground: 220 15% 45%; /* Softer gray for muted text */
+    --muted: 220 25% 94%; /* Lighter muted gray */
+    --muted-foreground: 220 15% 50%; /* Softer gray for muted text */
 
-    --accent: 120 55% 70%; /* Adjusted Gentle Green */
-    --accent-foreground: 120 40% 15%; /* Darker green for contrast */
+    --accent: 120 73% 75%; /* Gentle Green (PRD: #90EE90) */
+    --accent-foreground: 120 60% 20%; /* Dark green for contrast */
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 20% 90%; /* Matched with muted */
-    --input: 220 20% 90%; /* Matched with border */
-    --ring: 200 60% 65%; /* Primary color for ring, slightly desaturated */
+    --border: 220 25% 92%; /* Light border */
+    --input: 220 25% 92%; /* Light input */
+    --ring: 207 44% 80%; /* Primary color for ring */
 
     --radius: 0.5rem;
 
