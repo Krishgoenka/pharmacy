@@ -22,7 +22,7 @@ export default function HomePage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-top md:object-center"
           />
         </div>
         <div className="container mx-auto px-4 md:px-6 py-8 md:py-12 text-center">
