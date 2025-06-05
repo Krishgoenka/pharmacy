@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: pharmacyDetails.name,
     images: [
       {
-        url: '/hero-banner.png', // Updated to .png
+        url: '/hero.png', 
         width: 1200,
         height: 630,
         alt: `${pharmacyDetails.name} - Your Trusted Health Partner`,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${pharmacyDetails.name} - Kolkata's Trusted Pharmacy Services`,
     description: `${pharmacyDetails.name} offers comprehensive pharmacy services including medicines, doctor appointments, and lab tests.`,
-    images: ['/hero-banner.png'], // Updated to .png
+    images: ['/hero.png'], 
     // creator: '@yourTwitterHandle', // Optional: Add your Twitter handle
   },
   icons: {

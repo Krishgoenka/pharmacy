@@ -16,7 +16,14 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="w-full">
         <div className="relative w-full h-[50vh] md:h-[60vh] bg-muted">
-          {/* Image removed from here */}
+          <Image
+            src="/hero.png"
+            alt={`${pharmacyDetails.name} Hero Banner`}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
         <div className="container mx-auto px-4 md:px-6 py-8 md:py-12 text-center">
           <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary animate-slide-in-up [animation-delay:0.2s]">
