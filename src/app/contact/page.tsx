@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import { pharmacyDetails } from '@/lib/data';
 import { ContactForm } from '@/components/ContactForm';
-import { Phone, Mail, MapPin, Facebook, Instagram, MessageSquare as WhatsAppIcon } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, MessageSquare as WhatsAppIcon, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 
 export default function ContactPage() {
   return (
@@ -69,6 +69,19 @@ export default function ContactPage() {
                   ></iframe>
                 </div>
             </CardContent>
+            <CardFooter>
+              <Button asChild className="w-full">
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(pharmacyDetails.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get directions to Mahendra Pharmacy on Google Maps"
+                >
+                  <Navigation className="mr-2 h-5 w-5" />
+                  Get Directions
+                </a>
+              </Button>
+            </CardFooter>
           </Card>
 
           <Card className="shadow-lg">
