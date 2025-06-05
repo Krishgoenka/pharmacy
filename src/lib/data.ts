@@ -92,12 +92,12 @@ export const reviewsData: Review[] = [
     id: '3',
     name: 'Rohan M.',
     rating: 4.5,
-    feedback: 'Found Mahendra Pharmacy very reliable for medical tests and genuine medicines. Highly recommended!',
+    feedback: 'Found Mahendar Pharmacy very reliable for medical tests and genuine medicines. Highly recommended!',
   },
 ];
 
 export const pharmacyDetails = {
-  name: "Mahendra Pharmacy",
+  name: "Mahendar Pharmacy",
   phoneNumbers: ["7890443371"],
   email: "akash.agarwal5@yahoo.com",
   operatingHours: "9:00 AM – 10:00 PM (All days, break: 2:00 PM - 2:00 PM implied continuity)", // Clarified based on prompt
@@ -106,8 +106,8 @@ export const pharmacyDetails = {
   tagline: "Your Trusted Pharmacy with Medicine, Doctors, and Testing Services",
   social: {
     whatsapp: "https://wa.me/917890443371", 
-    facebook: "https://facebook.com/mahendrapharmacy", 
-    instagram: "https://instagram.com/mahendrapharmacy", 
+    facebook: "https://facebook.com/mahendarpharmacy", 
+    instagram: "https://instagram.com/mahendarpharmacy", 
   }
 };
 

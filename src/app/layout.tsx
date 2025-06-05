@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className="font-body antialiased flex flex-col min-h-screen bg-background text-foreground">
         <ThemeProvider
           defaultTheme="light"
-          storageKey="mahendra-pharmacy-theme"
+          storageKey="mahendar-pharmacy-theme"
         >
           <Header />
           <main className="flex-grow">
@@ -42,3 +42,4 @@ export default function RootLayout({
     </html>
   );
 }
+

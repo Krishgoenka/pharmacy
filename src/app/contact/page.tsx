@@ -75,7 +75,7 @@ export default function ContactPage() {
                   href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(pharmacyDetails.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Get directions to Mahendra Pharmacy on Google Maps"
+                  aria-label={`Get directions to ${pharmacyDetails.name} on Google Maps`}
                 >
                   <Navigation className="mr-2 h-5 w-5" />
                   Get Directions
@@ -114,3 +114,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

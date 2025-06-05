@@ -27,7 +27,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export function ThemeProvider({
   children,
   defaultTheme = 'light',
-  storageKey = 'mahendra-pharmacy-ui-theme',
+  storageKey = 'mahendar-pharmacy-ui-theme', // Updated default storageKey
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
   const [mounted, setMounted] = useState(false);
@@ -92,3 +92,4 @@ export const useTheme = () => {
   }
   return context;
 };
+

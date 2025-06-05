@@ -210,7 +210,12 @@ export default function HomePage() {
                 </Link>
               </Button>
               <Button variant="outline" asChild className="w-full sm:w-auto">
-                <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(pharmacyDetails.address)}`} target="_blank" rel="noopener noreferrer">
+                <a 
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(pharmacyDetails.address)}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label={`Get directions to ${pharmacyDetails.name} on Google Maps`}
+                >
                   Get Directions
                 </a>
               </Button>
@@ -222,3 +227,4 @@ export default function HomePage() {
     </div>
   );
 }
+
