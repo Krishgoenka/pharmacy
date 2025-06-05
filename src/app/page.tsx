@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="w-full">
         <div className="relative w-full h-[50vh] md:h-[60vh] bg-muted">
           <Image
-            src="/hero-banner.jpg" 
+            src="/hero-banner.jpg"
             alt={`${pharmacyDetails.name} Banner`}
             fill
             style={{ objectFit: 'cover' }}
@@ -52,7 +52,7 @@ export default function HomePage() {
               <CardContent className="space-y-2 text-sm">
                 <p className="flex items-center gap-2"><Phone size={16} /> {pharmacyDetails.phoneNumbers.join(', ')}</p>
                 <p className="flex items-center gap-2"><Mail size={16} /> {pharmacyDetails.email}</p>
-                <p className="flex items-center gap-2"><MapPin size={16} /> {pharmacyDetails.address}</p>
+                <p className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 shrink-0" /> {pharmacyDetails.address}</p>
               </CardContent>
             </Card>
             <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slide-in-up [animation-delay:0.2s]">
@@ -165,6 +165,45 @@ export default function HomePage() {
           <div className="text-center mt-8 animate-slide-in-up [animation-delay:0.4s]">
             <Button asChild variant="outline"><Link href="/reviews">Read More Reviews</Link></Button>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Info Section on Homepage */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="font-headline text-3xl md:text-4xl font-semibold text-center mb-10 animate-slide-in-up">Get In Touch</h2>
+          <Card className="max-w-3xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slide-in-up [animation-delay:0.2s]">
+            <CardHeader>
+              <CardTitle className="font-headline text-2xl text-primary">Contact Information</CardTitle>
+              <CardDescription>We're here to help. Reach out to us for any inquiries.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-primary" />
+                <span className="text-md">{pharmacyDetails.phoneNumbers.join(' / ')}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-primary" />
+                <span className="text-md">{pharmacyDetails.email}</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-primary mt-1 shrink-0" />
+                <span className="text-md">{pharmacyDetails.address}</span>
+              </div>
+            </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-3 pt-4">
+              <Button asChild className="w-full sm:w-auto">
+                <Link href="/contact">
+                  Send a Message
+                </Link>
+              </Button>
+              <Button variant="outline" asChild className="w-full sm:w-auto">
+                <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(pharmacyDetails.address)}`} target="_blank" rel="noopener noreferrer">
+                  Get Directions
+                </a>
+              </Button>
+            </CardFooter>
+          </Card>
         </div>
       </section>
 
