@@ -1,8 +1,8 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { pharmacyDetails, services } from '@/lib/data';
-import { CheckCircle } from 'lucide-react';
+import { pharmacyDetails } from '@/lib/data';
+import { CheckCircle, Heart, BadgeCheck, Users } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -49,8 +49,8 @@ export default function AboutPage() {
               ))}
             </CardContent>
           </Card>
-          <div className="grid grid-cols-1 gap-6">
-             <Image
+          <div className="space-y-6">
+            <Image
               src="/about1.png"
               alt={`${pharmacyDetails.name} Interior`}
               width={600}
@@ -70,7 +70,46 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="text-center animate-slide-in-up [animation-delay:0.5s]">
+      <section className="mb-12 md:mb-16 animate-slide-in-up [animation-delay:0.5s]">
+        <h2 className="font-headline text-3xl md:text-4xl font-semibold text-center mb-10">Our Core Values</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 text-center animate-slide-in-up [animation-delay:0.5s]">
+            <CardHeader>
+              <Heart className="w-12 h-12 text-primary mx-auto mb-2" />
+              <CardTitle className="font-headline text-xl">Patient-Centric Care</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Your health and well-being are our top priorities. We provide personalized care and attention to every individual.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 text-center animate-slide-in-up [animation-delay:0.6s]">
+            <CardHeader>
+              <BadgeCheck className="w-12 h-12 text-primary mx-auto mb-2" />
+              <CardTitle className="font-headline text-xl">Trusted Expertise</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Our experienced pharmacists and healthcare professionals offer reliable advice and professional service you can depend on.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 text-center animate-slide-in-up [animation-delay:0.7s]">
+            <CardHeader>
+              <Users className="w-12 h-12 text-primary mx-auto mb-2" />
+              <CardTitle className="font-headline text-xl">Community Focus</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                We are dedicated to serving our local community, fostering a healthy neighborhood, and being an accessible healthcare partner.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="text-center animate-slide-in-up [animation-delay:0.8s]">
         <h2 className="font-headline text-2xl md:text-3xl font-semibold mb-4">Visit Us Today</h2>
         <p className="text-md text-muted-foreground mb-2">{pharmacyDetails.address}</p>
         <p className="text-md text-muted-foreground">Call us at: {pharmacyDetails.phoneNumbers.join(' / ')}</p>
