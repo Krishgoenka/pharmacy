@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { pharmacyDetails, services, dealItems, reviewsData } from '@/lib/data';
-import { Phone, Mail, MapPin, Clock, MessageSquare, CalendarDays, ShoppingCart, Pill, Truck, Microscope, Stethoscope, Star, Tag } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageSquare, CalendarDays, ShoppingCart, Pill, Truck, Microscope, Stethoscope, Star, Tag, Navigation } from 'lucide-react';
 import { ConsultationBookingSection } from '@/components/sections/ConsultationBookingSection';
 
 export default function HomePage() {
@@ -23,7 +23,6 @@ export default function HomePage() {
             style={{ objectFit: 'cover' }}
             priority
             sizes="100vw"
-            data-ai-hint="pharmacy interior medicines"
           />
         </div>
         <div className="container mx-auto px-4 md:px-6 py-8 md:py-12 text-center">
@@ -73,7 +72,7 @@ export default function HomePage() {
               <CardContent className="flex flex-col sm:flex-row gap-2">
                 <Button variant="default" className="flex-1" asChild><a href={`tel:${pharmacyDetails.phoneNumbers[0]}`}>Call Now</a></Button>
                 <Button variant="outline" className="flex-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground" asChild>
-                  <a href={pharmacyDetails.social.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
                     <MessageSquare size={16} /> WhatsApp Us
                   </a>
                 </Button>
@@ -223,7 +222,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   aria-label={`Get directions to ${pharmacyDetails.name} on Google Maps`}
                 >
-                  Get Directions
+                  <Navigation className="mr-2 h-5 w-5" /> Get Directions
                 </a>
               </Button>
             </CardFooter>
