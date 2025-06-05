@@ -55,6 +55,7 @@ export default function AboutPage() {
               alt={`${pharmacyDetails.name} Interior`}
               width={600}
               height={400}
+              quality={100}
               className="rounded-lg object-cover shadow-md w-full h-64"
             />
             <Image
@@ -62,6 +63,7 @@ export default function AboutPage() {
               alt={`${pharmacyDetails.name} Exterior`}
               width={600}
               height={400}
+              quality={100}
               className="rounded-lg object-cover shadow-md w-full h-64"
             />
           </div>
