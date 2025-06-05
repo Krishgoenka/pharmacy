@@ -112,8 +112,8 @@ export const pharmacyDetails = {
 };
 
 export const dealItems = [
-    { id: 1, name: 'All Medicines', discount: 'Flat 20% OFF', description: 'Get a flat 20% discount on our wide range of medicines.', image: 'https://placehold.co/300x200.png', dataAiHint: 'medicines pharmacy' },
-    { id: 2, name: 'Senior Citizen Health Checkup', discount: 'Up to 25% OFF', description: 'Dedicated health packages for our senior citizens at great prices.', image: 'https://placehold.co/300x200.png', dataAiHint: 'senior health' },
-    { id: 3, name: 'Diagnostic Test Packages', discount: 'Up to 30% OFF', description: 'Avail special discounts on various diagnostic tests and packages.', image: 'https://placehold.co/300x200.png', dataAiHint: 'lab tests' },
+    { id: 1, name: 'All Medicines', discount: 'Flat 20% OFF', description: 'Get a flat 20% discount on our wide range of medicines.', image: '/deal-medicines.jpg', dataAiHint: 'medicines pharmacy' },
+    { id: 2, name: 'Senior Citizen Health Checkup', discount: 'Up to 25% OFF', description: 'Dedicated health packages for our senior citizens at great prices.', image: '/deal-senior-health.jpg', dataAiHint: 'senior health' },
+    { id: 3, name: 'Diagnostic Test Packages', discount: 'Up to 30% OFF', description: 'Avail special discounts on various diagnostic tests and packages.', image: '/deal-lab-tests.jpg', dataAiHint: 'lab tests' },
 ];
 
