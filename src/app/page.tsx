@@ -8,6 +8,9 @@ import { Phone, Mail, MapPin, Clock, MessageSquare, CalendarDays, ShoppingCart, 
 import { ConsultationBookingSection } from '@/components/sections/ConsultationBookingSection';
 
 export default function HomePage() {
+  const whatsappMessage = encodeURIComponent("Hello Mahendar Pharmacy, I have a question.");
+  const whatsappLink = `${pharmacyDetails.social.whatsapp}?text=${whatsappMessage}`;
+
   return (
     <div className="flex flex-col min-h-dvh animate-fade-in">
       {/* Hero Section */}
@@ -128,7 +131,11 @@ export default function HomePage() {
                   <p className="text-sm text-muted-foreground">{deal.description}</p>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="default" className="w-full">Claim Deal</Button>
+                  <Button variant="default" className="w-full" asChild>
+                    <a href={`tel:${pharmacyDetails.phoneNumbers[0]}`}>
+                      <Phone className="mr-2 h-4 w-4" /> Claim Deal
+                    </a>
+                  </Button>
                 </CardFooter>
               </Card>
             ))}
@@ -205,14 +212,14 @@ export default function HomePage() {
             </CardContent>
             <CardFooter className="flex flex-col sm:flex-row gap-3 pt-4">
               <Button asChild className="w-full sm:w-auto">
-                <Link href="/contact">
-                  Send a Message
-                </Link>
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                  <MessageSquare className="mr-2 h-4 w-4" /> Send a Message
+                </a>
               </Button>
               <Button variant="outline" asChild className="w-full sm:w-auto">
-                <a 
-                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(pharmacyDetails.address)}`} 
-                  target="_blank" 
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(pharmacyDetails.address)}`}
+                  target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Get directions to ${pharmacyDetails.name} on Google Maps`}
                 >
@@ -227,4 +234,3 @@ export default function HomePage() {
     </div>
   );
 }
-
