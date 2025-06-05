@@ -174,10 +174,22 @@ export default function HomePage() {
           <h2 className="font-headline text-3xl md:text-4xl font-semibold text-center mb-10 animate-slide-in-up">Get In Touch</h2>
           <Card className="max-w-3xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slide-in-up [animation-delay:0.2s]">
             <CardHeader>
-              <CardTitle className="font-headline text-2xl text-primary">Contact Information</CardTitle>
-              <CardDescription>We're here to help. Reach out to us for any inquiries.</CardDescription>
+              <CardTitle className="font-headline text-2xl text-primary">Contact Information & Map</CardTitle>
+              <CardDescription>Find us easily or reach out for any inquiries.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
+              <div className="aspect-video rounded-lg overflow-hidden border mb-6">
+                <iframe
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(pharmacyDetails.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`${pharmacyDetails.name} Location Map`}
+                ></iframe>
+              </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary" />
                 <span className="text-md">{pharmacyDetails.phoneNumbers.join(' / ')}</span>
