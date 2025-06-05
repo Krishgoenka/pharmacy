@@ -106,8 +106,8 @@ export const pharmacyDetails = {
   tagline: "Your Trusted Pharmacy with Medicine, Doctors, and Testing Services",
   social: {
     whatsapp: "https://wa.me/917899044371", // Assuming one number for WhatsApp
-    facebook: "https://facebook.com/mahendrapharmacy", // Updated assuming generic link
-    instagram: "https://instagram.com/mahendrapharmacy", // Updated assuming generic link
+    facebook: "https://facebook.com/mahendrapharmacy", 
+    instagram: "https://instagram.com/mahendrapharmacy", 
   }
 };
 
