@@ -98,21 +98,21 @@ export const reviewsData: Review[] = [
 
 export const pharmacyDetails = {
   name: "Mahendra Pharmacy",
-  phoneNumbers: ["7899044371", "9808930090"],
+  phoneNumbers: ["7890443371"],
   email: "akash.agarwal5@yahoo.com",
   operatingHours: "9:00 AM – 10:00 PM (All days, break: 2:00 PM - 2:00 PM implied continuity)", // Clarified based on prompt
   fullOperatingHours: "9:00 AM – 2:00 PM, 2:00 PM – 10:00 PM (All days)",
   address: "119/1, Jessore Road, Kolkata – 700055",
   tagline: "Your Trusted Pharmacy with Medicine, Doctors, and Testing Services",
   social: {
-    whatsapp: "https://wa.me/917899044371", // Assuming one number for WhatsApp
+    whatsapp: "https://wa.me/917890443371", 
     facebook: "https://facebook.com/mahendrapharmacy", 
     instagram: "https://instagram.com/mahendrapharmacy", 
   }
 };
 
 export const dealItems = [
-    { id: 1, name: 'All Medicines', discount: 'Flat 20% OFF', description: 'Get a flat 20% discount on our wide range of medicines.', image: '/medicine.png', dataAiHint: 'medicines pharmacy' },
+    { id: 1, name: 'All Medicines', discount: 'Flat 20% OFF', description: 'Get a flat 20% discount on our wide range of medicines.', image: '/medicine.png', dataAiHint: 'medicine pharmacy' },
     { id: 2, name: 'Senior Citizen Health Checkup', discount: 'Up to 25% OFF', description: 'Dedicated health packages for our senior citizens at great prices.', image: '/senior.png', dataAiHint: 'senior health' },
     { id: 3, name: 'Diagnostic Test Packages', discount: 'Up to 30% OFF', description: 'Avail special discounts on various diagnostic tests and packages.', image: '/test.png', dataAiHint: 'lab tests' },
 ];
